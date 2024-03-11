@@ -45,14 +45,7 @@ else if @codservicio in (30,35,37,60)
 	insert into @horarios select codigo,codigoold, codigocom, descrip, f_baja, alternativo from wasmcom.dbo.thorarios (nolock) where codigo =18
 else if @codservicio in (83)
 	insert into @horarios select codigo,codigoold, codigocom, descrip, f_baja, alternativo from wasmcom.dbo.thorarios (nolock) where codigo in (16,17)
-else if @codservicio =21
-	insert into @horarios select codigo,codigoold, codigocom, descrip, f_baja, alternativo from wasmcom.dbo.thorarios (nolock) where codigo in (2,5)
-else if @codservicio =62
-	insert into @horarios select codigo,codigoold, codigocom, descrip, f_baja, alternativo from wasmcom.dbo.thorarios (nolock) where codigo in (0,2,5)
-else if @codservicio = 66 
-	insert into @horarios select codigo,codigoold, codigocom, descrip, f_baja, alternativo from wasmcom.dbo.thorarios (nolock) where codigo =2
-else if @codservicio in (96,97,98)
-	insert into @horarios select codigo,codigoold, codigocom, descrip, f_baja, alternativo from wasmcom.dbo.thorarios (nolock) where codigo =18
+
 else begin
 	insert into @horarios select codigo,codigoold, codigocom, descrip, f_baja, alternativo from wasmcom.dbo.thorarios (nolock) where f_baja is null
 
