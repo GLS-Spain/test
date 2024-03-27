@@ -35,8 +35,6 @@ if @pais_dst is null set @pais_dst= 'ES'
 
 if @codservicio = 2
 	insert into @horarios select codigo,codigoold, codigocom, descrip, f_baja, alternativo from wasmcom.dbo.thorarios (nolock) where codigo in (0,2,3,5,14,15)
-else if @codservicio = 6 
-	insert into @horarios select codigo,codigoold, codigocom, descrip, f_baja, alternativo from wasmcom.dbo.thorarios (nolock) where codigo =10
 else if @codservicio = 12 
 	insert into @horarios select codigo,codigoold, codigocom, descrip, f_baja, alternativo from wasmcom.dbo.thorarios (nolock) where codigo =17
 else if @codservicio = 13 
