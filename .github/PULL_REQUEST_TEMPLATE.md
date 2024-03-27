@@ -1,5 +1,8 @@
-## Fecha Producción:
+## Fecha producción:
 
+## Entornos:
+[ ] Apolo
+[ ] Aristeo
 
 ## Descripción del cambio
 
@@ -15,3 +18,14 @@
 ## Afecta a:
 
 -
+
+## Plan de ejecucion:
+
+
+## Rollback plan:
+
+## Test realizados:
+
+
+## Test a realizar:
+
