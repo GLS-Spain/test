@@ -1,31 +1,26 @@
 ## Fecha producción:
 
 ## Entornos:
-[ ] Apolo
-[ ] Aristeo
+- [x]  Apolo
+- [x]  Aristeo
 
 ## Descripción del cambio
 
 
 ## Objetos:
-
-
+- 
 
 ## Tareas:
-
--
-
-## Afecta a:
-
 -
 
 ## Plan de ejecucion:
-
+1.
 
 ## Rollback plan:
+1.
 
-## Test realizados:
+## Test antes de producción:
 
 
-## Test a realizar:
+## Test despues de producción:
 
