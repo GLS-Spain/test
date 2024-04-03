@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: pr-custom-review
-        uses: paritytech/pr-custom-review@tag           # Pick a release tag and put it after the "@".
+        uses: paritytech/pr-custom-review@1           # Pick a release tag and put it after the "@".
         with:
           # Provide *EITHER* "token" or "checks-reviews-api"
 

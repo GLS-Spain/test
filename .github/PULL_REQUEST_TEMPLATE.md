@@ -1,4 +1,4 @@
-## Fecha producción:
+## Fecha producción:YYYY-MM-DD
 
 ## Entornos:
 - [x]  Apolo
