@@ -1,24 +1,27 @@
-# locks-review-team defines the team which will handle the "Locks touched"
-# built-in rule. We recommend protecting this input with "🔒" so that it won't
-# be changed unless someone from locks-review-team approves it.
-# 🔒 PROTECTED: Changes to locks-review-team should be approved by custom-locks-team
-locks-review-team: custom-locks-team
+# 🔒 PROTECTED: Changes to locks-review-team should be approved by the current locks-review-team
+locks-review-team: locks-review
+team-leads-team: polkadot-review
+action-review-team: ci
 
-# The second team which will handle the "Locks touched" built-in rule.
-team-leads-team: my-custom-leads-team
-
-# The team which will handle the changes to the action's configuration.
-action-review-team: my-action-review-team
-
-# This is an example of a basic rule which enforces one approval from anyone
-# More complex rule types are explained in-depth in the "Rules syntax" section
 rules:
-  - name: A single approval
-    min_approvals: 1
+  - name: Core developers
+    check_type: changed_files
+    condition:
+      include: .*
+      # excluding files from 'CI team' rules
+      exclude: ^\.gitlab-ci\.yml|^scripts/ci/.*|^\.github/.*
+    min_approvals: 2
+    teams:
+      - core-devs
 
-# OPTIONAL: define teams or users whose reviews are not requested by the action
-prevent_review_request:
-  users:
-    - user_name
+  - name: CI team
+    check_type: changed_files
+    condition:
+      include: ^\.gitlab-ci\.yml|^scripts/ci/.*|^\.github/.*
+    min_approvals: 2
+    teams:
+      - ci
+
+prevent-review-request:
   teams:
-    - team_name
+    - core-devs
