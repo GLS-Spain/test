@@ -20,4 +20,4 @@ jobs:
       - name: pr-custom-review
         uses: paritytech/pr-custom-review@v2
         with:
-          github-token: ${{ secrets.AUTOMERGE_TOKEN }}
+          token: ${{ secrets.AUTOMERGE_TOKEN }}
