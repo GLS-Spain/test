@@ -13,7 +13,7 @@ on:                              # The events which will trigger the action.
   pull_request_review:           # PR review received. Action will check whether PR meets required review rules.
 
 jobs:
-  pr-custom-review:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: pr-custom-review
