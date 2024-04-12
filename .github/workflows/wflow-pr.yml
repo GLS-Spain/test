@@ -21,5 +21,6 @@ jobs:
         run: exit 1
       - name: pr-custom-review
         uses: GLS-Spain/test@main
+        uses: ./.github/actions/action.yml
         with:
           checks-reviews-api: https://pcr.parity-prod.parity.io/api/v1/check_reviews
