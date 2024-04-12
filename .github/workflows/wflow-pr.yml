@@ -20,6 +20,6 @@ jobs:
         if: github.event.pull_request.draft == true
         run: exit 1
       - name: pr-custom-review
-        uses: GLS-Spain/test@master
+        uses: GLS-Spain/test
         with:
           checks-reviews-api: https://pcr.parity-prod.parity.io/api/v1/check_reviews
