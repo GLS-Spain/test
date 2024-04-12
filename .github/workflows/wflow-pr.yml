@@ -13,27 +13,13 @@ on:                              # The events which will trigger the action.
   pull_request_review:           # PR review received. Action will check whether PR meets required review rules.
 
 jobs:
-  build:
+  pr-custom-review:
     runs-on: ubuntu-latest
     steps:
       - name: pr-custom-review
-        uses: paritytech/pr-custom-review@1           # Pick a release tag and put it after the "@".
+        if: github.event.pull_request.draft == true
+        run: exit 1
+      - name: pr-custom-review
+        uses: GLS-Spain/test@master
         with:
-          # Provide *EITHER* "token" or "checks-reviews-api"
-
-          # "token" is suitable only for private repositories because GitHub
-          # does not allow the token to be used for forks' pipelines.
-          # Providing this input makes the check run directly in the action. The
-          # token needs the following scopes:
-          # - `read:org` for being able to request reviews from teams
-          # - `workflow` for being able to request the workflow's job
-          #    information; used to track lines in the job's output
-          token: ${{ secrets.PRCR_TOKEN }}
-
-          # "checks-reviews-api" is suitable for both public and private
-          # repositories.
-          # Providing this input makes the action request the check processing
-          # from an API which responds with the output to be printed in the
-          # action, effectively using the action as a front-end only. See the
-          # "Server" section for more details.
-          checks-reviews-api: https://server/api/v1/check_reviews
+          checks-reviews-api: https://pcr.parity-prod.parity.io/api/v1/check_reviews
