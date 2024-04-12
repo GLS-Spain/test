@@ -16,6 +16,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: GLS-Spain/test@main
       - name: pr-custom-review
         if: github.event.pull_request.draft == true
         run: exit 1
