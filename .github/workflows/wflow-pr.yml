@@ -18,9 +18,8 @@ jobs:
     steps:
       - name: pr-custom-review
         if: github.event.pull_request.draft == true
-        run: exit 1        
-      - uses: GLS-Spain/test@main
+        run: exit 1
       - name: pr-custom-review
-        uses: ./.github/actions/action.yml
+        uses: ./.github/actions/pr-custom-review
         with:
           checks-reviews-api: https://pcr.parity-prod.parity.io/api/v1/check_reviews
