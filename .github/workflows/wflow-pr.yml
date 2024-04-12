@@ -16,11 +16,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: pr-custom-review
+      - name: Skip if pull request is in Draft
         if: github.event.pull_request.draft == true
         run: exit 1
-      - uses: actions/checkout@v1
       - name: pr-custom-review
-        uses: ./.github/actions/pr-custom-review
+        uses: GLS-Spain/test/.github/actions/pr-custom-review@main
         with:
           checks-reviews-api: https://pcr.parity-prod.parity.io/api/v1/check_reviews
