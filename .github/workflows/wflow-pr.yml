@@ -16,11 +16,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: pr-custom-review
+      - name: pr-custom-review 1
         if: github.event.pull_request.draft == true
         run: exit 1
-      - name: pr-custom-review
+      - name: pr-custom-review 2
         uses: GLS-Spain/test@main
+      - name: pr-custom-review 3
         uses: ./.github/actions/action.yml
         with:
           checks-reviews-api: https://pcr.parity-prod.parity.io/api/v1/check_reviews
